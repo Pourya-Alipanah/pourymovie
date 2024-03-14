@@ -1,4 +1,4 @@
-import { tailwindColors } from "./src/constants/tailwindColors";
+import { tailwindColors } from "./src/configs/tailwindColors";
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -9,14 +9,17 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      screens:{
-        'sm':'576px',
-        'md':'768px',
-        'lg':'992px',
-        'xl':'1200px',
-        '2xl':'1400px'
+      screens: {
+        sm: "576px",
+        md: "768px",
+        lg: "992px",
+        xl: "1200px",
+        "2xl": "1400px",
       },
       colors: tailwindColors,
+      container: {
+        center: true,
+      },
     },
   },
   plugins: [],

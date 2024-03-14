@@ -4,6 +4,7 @@ import { Figtree } from "next/font/google";
 import localFont from "next/font/local";
 import { title, description } from "@/constants/metaTagInfo";
 import "./globals.css";
+import { Footer } from "./_components/footer";
 
 const figtree = Figtree({
   display: "swap",
@@ -64,8 +65,8 @@ export const metadata: Metadata = {
     title,
     description,
     images: "../../images/pourymovie-meta.jpeg",
-  },
-};
+  }
+  }
 
 export default function RootLayout({
   children,
@@ -73,8 +74,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html className={`${figtree.variable} ${vazirMatn.variable}`}>
-      <body className="bg-slate-900 text-white">{children}</body>
+    <html dir="rtl" className={`${figtree.variable} ${vazirMatn.variable}`}>
+      <body className="grid grid-cols-[18rem_1fr_18rem] grid-rows-1 relative bg-[url(/images/main-background.jpg)] bg-center bg-cover bg-no-repeat h-[200vh]"> {/* TODO: remove h-[200vh] */}
+
+        <Footer/>
+
+        <main className="bg-[#221f1fd4]">{children}</main>
+
+        <aside className="bg-[#221f1fd4]"></aside>
+
+      </body>
     </html>
   );
 }
