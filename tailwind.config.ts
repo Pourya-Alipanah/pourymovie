@@ -20,7 +20,12 @@ const config: Config = {
       container: {
         center: true,
       },
+      
     },
+  },
+  corePlugins:{
+    backgroundOpacity:true,
+    textOpacity:true,
   },
   plugins: [],
 };

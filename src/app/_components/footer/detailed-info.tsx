@@ -1,7 +1,7 @@
 import React from "react";
 import { IconGithub, IconLinkedin } from "../icons";
 
-export const DetailedInfo = () => {
+export const DetailedInfo: React.FC = () => {
   return (
     <div className="flex flex-col w-full">
 

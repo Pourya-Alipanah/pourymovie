@@ -16,6 +16,8 @@ const generateForegroundColorFrom = (
     .mix(colord(input).isDark() ? "white" : "black", percentage)
     .toHex();
 
+    // todo: convert opacities to tailwind classes
+
 export const tailwindColors: Record<string, string> = {
   transparent: "transparent",
   white: "#E3E3E3",
@@ -30,12 +32,16 @@ export const tailwindColors: Record<string, string> = {
   neutral: "#141414",
   "neutral-focus": generateDarkenColorFrom("#141414", 0.03),
   "neutral-content": generateForegroundColorFrom("#ffffff"),
-  succses: "#60ff79de",
-  "succses-content": generateForegroundColorFrom("#60ff79de"),
+  success: "#60ff79de",
+  "success-content": generateForegroundColorFrom("#60ff79de"),
+  "success-focus": generateDarkenColorFrom("#60ff79de"),
   warning: "#f6b22dde",
   "warning-content": generateForegroundColorFrom("#f6b22dde"),
+  "warning-focus": generateDarkenColorFrom("#f6b22dde"),
   danger: "#ff6050de",
   "danger-content": generateForegroundColorFrom("#ff6050de"),
+  "danger-focus": generateDarkenColorFrom("#ff6050de"),
   info: "#507affde",
   "info-content": generateForegroundColorFrom("#507affde"),
+  "info-focus": generateDarkenColorFrom("#507affde"),
 };

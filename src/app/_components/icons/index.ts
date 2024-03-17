@@ -6,3 +6,4 @@ export { default as IconHeartOutline } from './src/heart-outline';
 export { default as IconHome } from './src/home';
 export { default as IconLinkedin } from './src/linkedin';
 export { default as IconPurchaseTag } from './src/purchase-tag';
+export { default as IconSearch } from './src/search';

@@ -5,6 +5,8 @@ import localFont from "next/font/local";
 import { title, description } from "@/constants/metaTagInfo";
 import "./globals.css";
 import { Footer } from "./_components/footer";
+import { GlobalSearch } from "./_components/global-search";
+import { Notification } from "./_components/notification";
 
 const figtree = Figtree({
   display: "swap",
@@ -76,11 +78,17 @@ export default function RootLayout({
   // todo: remove h-[200vh] from body
   return (
     <html dir="rtl" className={`${figtree.variable} ${vazirMatn.variable}`}>
-      <body className="grid grid-cols-[1fr_3fr_1fr] grid-rows-1 relative bg-[url(/images/main-background.jpg)] bg-center bg-cover bg-no-repeat h-[200vh]">
+      <body className="grid grid-cols-[1fr_3fr_1fr] grid-rows-1 relative bg-[url(/images/main-background.jpg)] bg-center bg-cover bg-no-repeat ">
 
         <Footer/>
 
-        <main className="bg-[#221f1fd4]">{children}</main>
+        <main className="bg-[#221f1fd4] flex flex-col px-4">
+          <div className="flex items-center justify-between pt-10">
+            <GlobalSearch/>
+            <Notification/>
+          </div>
+          {children}
+        </main>
 
         <aside className="bg-[#221f1fd4]"></aside>
 
