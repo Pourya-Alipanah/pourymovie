@@ -73,9 +73,10 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // todo: remove h-[200vh] from body
   return (
     <html dir="rtl" className={`${figtree.variable} ${vazirMatn.variable}`}>
-      <body className="grid grid-cols-[18rem_1fr_18rem] grid-rows-1 relative bg-[url(/images/main-background.jpg)] bg-center bg-cover bg-no-repeat h-[200vh]"> {/* TODO: remove h-[200vh] */}
+      <body className="grid grid-cols-[1fr_3fr_1fr] grid-rows-1 relative bg-[url(/images/main-background.jpg)] bg-center bg-cover bg-no-repeat h-[200vh]">
 
         <Footer/>
 

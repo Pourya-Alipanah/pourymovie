@@ -1,7 +1,28 @@
-import React from 'react'
+import React from "react";
+import { IconGithub, IconLinkedin } from "../icons";
 
 export const DetailedInfo = () => {
   return (
-    <div>DetailedInfo</div>
-  )
-}
+    <div className="flex flex-col w-full">
+
+      <div className="flex flex-col items-start pr-10">
+
+        <p className="flex items-center justify-center mb-2">
+          <span className="list-item text-primary-btn text-3xl" />
+          ارتباط با ما
+        </p>
+
+        <div className="flex justify-center items-center w-full gap-3 pl-10">
+          <a href="https://github.com/Pourya-Alipanah" target="_blank" className="flex items-center">
+            گیت هاب
+            <IconGithub color="#8685efb3" />
+          </a>
+          <a href="https://www.linkedin.com/in/pourya-alipanah/" target="_blank" className="flex items-center">
+            لینکدین
+            <IconLinkedin color="#8685efb3"/>
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+};
