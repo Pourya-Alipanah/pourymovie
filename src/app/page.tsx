@@ -5,7 +5,7 @@ export default function Home() {
     <div className="grid h-screen place-content-center text-center">
       در دست ساخت
       <div lang="en">Under Construction</div>
-      <Button variant="error" isDisabled size="large" shape="wide">
+      <Button variant="primary" isOutline size="small">
         تست
       </Button>
     </div>

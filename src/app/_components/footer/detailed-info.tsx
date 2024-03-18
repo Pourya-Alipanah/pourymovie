@@ -8,11 +8,11 @@ export const DetailedInfo: React.FC = () => {
       <div className="flex flex-col items-start pr-10">
 
         <p className="flex items-center justify-center mb-2">
-          <span className="list-item text-primary-btn text-3xl" />
+          <span className="list-item text-primary/70 text-3xl" />
           ارتباط با ما
         </p>
 
-        <div className="flex justify-center items-center w-full gap-3 pl-10">
+        <div className="flex justify-center items-center flex-wrap w-full gap-3 pl-10">
           <a href="https://github.com/Pourya-Alipanah" target="_blank" className="flex items-center">
             گیت هاب
             <IconGithub color="#8685efb3" />

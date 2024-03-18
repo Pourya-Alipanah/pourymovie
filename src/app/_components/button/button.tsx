@@ -35,13 +35,13 @@ export const Button: React.FC<ButtonProps> = ({
 }) => {
   const classes = classNames(
     "btn",
-    className,
     { "btn-outline": isOutline },
     { "btn-link": isLink },
     { "pointer-events-none opacity-80": isLoading },
     { [`btn-${variant}`]: variant },
     { [sizeClasses[size]]: size },
-    { [shapeClasses[shape]]: shape }
+    { [shapeClasses[shape]]: shape },
+    className
   );
 
   return (

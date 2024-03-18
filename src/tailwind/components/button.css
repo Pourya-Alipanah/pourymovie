@@ -1,12 +1,13 @@
 .btn {
-  @apply no-underline inline-flex gap-2 h-12 px-7 border cursor-pointer select-none;
+  font-size: 1.125rem;
+  @apply no-underline inline-flex gap-2 h-12 px-4 border cursor-pointer select-none;
   @apply items-center justify-center transition duration-100 ease-in-out rounded-lg;
 
-  @apply border-primary-btn bg-primary-btn text-white outline-white;
+  @apply border-dark/70 bg-dark/70 text-white outline-dark;
 
   @media (hover: hover) {
     &:hover {
-      @apply bg-primary-focus border-primary-focus;
+      @apply bg-primary-focus border-primary-focus text-dark;
     }
   }
 
@@ -14,11 +15,11 @@
 
   &-primary {
 
-    @apply bg-primary-btn border-primary-btn outline-primary-btn;
+    @apply bg-primary/70 border-primary/70 outline-primary/70 text-white;
     
     @media (hover: hover) {
         &:hover {
-          @apply bg-primary-focus border-primary-focus;
+          @apply bg-primary-focus border-primary-focus text-white;
         }
       }
   }
@@ -29,49 +30,49 @@
 
     @media (hover: hover) {
         &:hover {
-          @apply bg-neutral-focus border-neutral-focus;
+          @apply bg-neutral-focus border-neutral-focus text-primary;
         }
       }
   }
 
   &-success {
 
-    @apply bg-success border-success outline-success text-success-content;
+    @apply bg-success/[0.87] border-success/[0.87] outline-success/[0.87] text-success-content/[0.87];
 
     @media (hover: hover) {
         &:hover {
-          @apply bg-success-focus border-success-focus;
+          @apply bg-success-focus/[0.87] border-success-focus/[0.87] text-success-content/[0.87];
         }
       }
   }
   &-info {
 
-    @apply bg-info border-info outline-info text-info-content;
+    @apply bg-info/[0.87] border-info/[0.87] outline-info/[0.87] text-info-content/[0.87];
 
     @media (hover: hover) {
         &:hover {
-          @apply bg-info-focus border-info-focus;
+          @apply bg-info-focus/[0.87] border-info-focus/[0.87] text-info-content/[0.87];
         }
       }
   }
   &-warning {
 
-    @apply bg-warning border-warning outline-warning text-warning-content;
+    @apply bg-warning/[0.87] border-warning/[0.87] outline-warning/[0.87] text-warning-content/[0.87];
 
     @media (hover: hover) {
         &:hover {
-          @apply bg-warning-focus border-warning-focus;
+          @apply bg-warning-focus/[0.87] border-warning-focus/[0.87] text-warning-content/[0.87];
         }
       }
   }
 
   &-error {
 
-    @apply bg-danger border-danger outline-danger text-danger-content;
+    @apply bg-danger/[0.87] border-danger/[0.87] outline-danger/[0.87] text-danger-content/[0.87];
 
     @media (hover: hover) {
         &:hover {
-          @apply bg-danger-focus border-danger-focus;
+          @apply bg-danger-focus/[0.87] border-danger-focus/[0.87] text-danger-content/[0.87];
         }
       }
   }
@@ -129,38 +130,38 @@
           }
       }
       &.btn-success{
-        @apply text-success;
+        @apply text-success/[0.87];
     
         @media (hover: hover) {
             &:hover {
-              @apply border-success-focus bg-success-focus text-success-content;
+              @apply border-success-focus/[0.87] bg-success-focus/[0.87] text-success-content/[0.87];
             }
           }
       }
       &.btn-info{
-        @apply text-info;
+        @apply text-info/[0.87];
     
         @media (hover: hover) {
             &:hover {
-              @apply border-info-focus bg-info-focus text-info;
+              @apply border-info-focus/[0.87] bg-info-focus/[0.87] text-info/[0.87];
             }
           }
       }
       &.btn-warning{
-        @apply text-warning;
+        @apply text-warning/[0.87];
     
         @media (hover: hover) {
             &:hover {
-              @apply border-warning-focus bg-warning-focus text-warning;
+              @apply border-warning-focus/[0.87] bg-warning-focus/[0.87] text-warning/[0.87];
             }
           }
       }
       &.btn-danger{
-        @apply text-danger;
+        @apply text-danger/[0.87];
     
         @media (hover: hover) {
             &:hover {
-              @apply border-danger-focus bg-danger-focus text-danger;
+              @apply border-danger-focus/[0.87] bg-danger-focus/[0.87] text-danger/[0.87];
             }
           }
       }
@@ -178,4 +179,52 @@
     }
   }
 
+  /* sizes and shapes */
+
+  &-xs{
+    @apply w-14 h-6 px-2;
+    font-size: 0.75rem;
+  }
+  &-sm{
+    @apply w-20 h-8 px-3;
+    font-size: 0.875rem;
+  }
+  &-lg{
+    @apply w-32 h-16 px-6;
+    font-size: 1.125rem;
+  }
+
+
+  &-wide{
+    @apply w-64 flex-nowrap;
+  }
+  &-full{
+    @apply w-full;
+  }
+  &-square{
+    @apply h-12 w-12 p-0;
+
+    &:where(.btn-xs){
+      @apply h-6 w-6 p-0;
+    }
+    &:where(.btn-sm){
+      @apply h-8 w-8 p-0;
+    }
+    &:where(.btn-lg){
+      @apply h-16 w-16 p-0;
+    }
+  }
+  &-circle{
+    @apply h-12 w-12 p-0 rounded-full;
+
+    &:where(.btn-xs){
+      @apply h-6 w-6 p-0 rounded-full;
+    }
+    &:where(.btn-sm){
+      @apply h-8 w-8 p-0 rounded-full;
+    }
+    &:where(.btn-lg){
+      @apply h-16 w-16 p-0 rounded-full;
+    }
+  }
 }
