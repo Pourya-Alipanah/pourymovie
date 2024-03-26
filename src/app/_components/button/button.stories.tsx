@@ -1,5 +1,8 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { Button } from "./button";
+import { IconHome } from "../icons";
+import {withTests} from '@storybook/addon-jest';
+import results from '../../../../.jest-test-results.json';
 
 const meta: Meta<typeof Button> = {
   component: Button,
@@ -10,6 +13,13 @@ const meta: Meta<typeof Button> = {
 export default meta;
 
 type Story = StoryObj<typeof Button>;
+
+export const Tests:Story = {
+  render: (args)=>(
+    <Button {...args}>Click here</Button>
+  )
+}
+Tests.decorators = [withTests({results})]
 
 export const ButtonColors: Story = {
   render: () => (
@@ -44,9 +54,6 @@ export const OutlineButtonColors: Story = {
       </Button>
       <Button isOutline variant="neutral">
         neutral
-      </Button>
-      <Button isOutline variant="ghost">
-        ghost
       </Button>
     </>
   ),
@@ -119,52 +126,13 @@ export const SquareButton: Story = {
         </svg>
       </Button>
       <Button shape="square" size="small">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-6 w-6"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-          />
-        </svg>
+        <IconHome/>
       </Button>
       <Button shape="square" size="normal">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-6 w-6"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-          />
-        </svg>
+        <IconHome/>
       </Button>
       <Button shape="square" size="large">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-6 w-6"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-          />
-        </svg>
+        <IconHome/>
       </Button>
     </>
   ),
@@ -244,7 +212,9 @@ export const CircleButton: Story = {
 export const DisabledButton: Story = {
   render: () => (
     <>
-      <Button isDisabled>Disabled</Button>
+      <Button variant="info" isDisabled>
+        Disabled
+        </Button>
     </>
   ),
 };
@@ -252,40 +222,24 @@ export const DisabledButton: Story = {
 export const IconButtons: Story = {
   render: () => (
     <>
-      <Button>
-      <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-6 w-6"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-          />
-        </svg>
+      <Button variant="error">
+        <IconHome/>
         Home
       </Button>
       <Button>
         Home
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-6 w-6"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-          />
-        </svg>
+        <IconHome/>
       </Button>
+    </>
+  ),
+};
+
+export const LoadingButton: Story = {
+  render: () => (
+    <>
+      <Button isLoading>Loading</Button>
+      <Button variant="info" isLoading loadingType="blocks">Loading</Button>
+      <Button isLoading loadingType="balls" variant="primary" isOutline>Loading</Button>
     </>
   ),
 };

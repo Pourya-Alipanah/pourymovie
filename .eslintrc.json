@@ -7,5 +7,8 @@
   ],
   "rules": {
     "camelcase": "off"
+  },
+  "env": {
+    "jest": true
   }
 }

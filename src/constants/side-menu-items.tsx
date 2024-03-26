@@ -1,5 +1,5 @@
 import { IconCalendar, IconHeartOutline, IconHome, IconPurchaseTag } from "@/app/_components/icons";
-import type { NavigationMenuItem } from "@/types/navigation-menu-item";
+import type { NavigationMenuItem } from "@/types/navigation-menu-item.types";
 
 export const menuItems: NavigationMenuItem[] = [
     {
