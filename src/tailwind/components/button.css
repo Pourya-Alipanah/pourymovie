@@ -178,7 +178,7 @@
     }
 
     &.btn-primary {
-      @apply text-primary;
+      @apply text-white border-primary;
 
       svg {
         @apply stroke-primary;
@@ -323,7 +323,7 @@
     }
   }
   &-circle {
-    @apply h-12 w-12 p-0 rounded-full;
+    @apply h-11 w-11 p-0 rounded-full;
 
     &:where(.btn-xs) {
       @apply h-6 w-6 p-0 rounded-full;

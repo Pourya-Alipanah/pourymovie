@@ -19,7 +19,7 @@ const SideNavigation: React.FC = () => {
 
             <Link
               href={href}
-              className={`flex items-center size-full hover:bg-primary-focus/40 rounded-l-[4px] transition-colors ${
+              className={`flex items-center size-full hover:bg-primary-focus/40 rounded-l-[4px] transition-colors max-lg:text-sm ${
                 isActive &&
                 "border-l-8 border-primary-focus bg-primary-focus/40"
               }`}

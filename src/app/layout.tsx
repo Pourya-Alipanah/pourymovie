@@ -7,6 +7,10 @@ import "./globals.css";
 import { Footer } from "./_components/footer";
 import { GlobalSearch } from "./_components/global-search";
 import { Notification } from "./_components/notification";
+import { AccountSection } from "./_components/account-section";
+import { IconArrowDownOutlined } from "./_components/icons";
+import { SuggestedFilms } from "./_components/suggested-films";
+import { MobileFooter } from "./_components/mobile-footer";
 
 const figtree = Figtree({
   display: "swap",
@@ -75,22 +79,35 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // todo: remove h-[200vh] from body
   return (
     <html dir="rtl" className={`${figtree.variable} ${vazirMatn.variable}`}>
-      <body className="grid grid-cols-[1fr_3fr_1fr] grid-rows-1 relative bg-[url(/images/main-background.jpg)] bg-center bg-cover bg-no-repeat ">
+      <body className="sm:grid sm:grid-cols-[1fr_3fr_1fr] sm:grid-rows-1 relative bg-[url(/images/main-background.jpg)] bg-center bg-cover bg-no-repeat ">
 
         <Footer/>
 
-        <main className="bg-[#221f1fd4] flex flex-col px-4">
-          <div className="flex items-center justify-between pt-10">
+        <main className="bg-[#221f1fd4] flex flex-col px-4 py-10">
+          <div className="flex items-center justify-around">
             <GlobalSearch/>
             <Notification/>
           </div>
           {children}
         </main>
 
-        <aside className="bg-[#221f1fd4]"></aside>
+        <aside className="bg-[#221f1fd4] flex flex-col items-center py-10">
+          <AccountSection/>
+
+          <div className="flex items-center justify-between mt-10 mb-6 text-white font-light">
+            <span className="max-lg:text-sm max-md:text-xs">فیلم های پیشنهادی</span>
+            <span>
+              <IconArrowDownOutlined className="max-lg:size-5 max-md:size-4"/>
+            </span>
+          </div>
+
+          <SuggestedFilms/>
+
+        </aside>
+
+        <MobileFooter/>
 
       </body>
     </html>

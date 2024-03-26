@@ -1,7 +1,11 @@
 import React from 'react'
+import { Button } from '../button'
+import { IconNotification } from '../icons'
 
 export const Notification = () => {
   return (
-    <div>Notification</div>
+    <Button shape='circle' isOutline variant='primary' size='normal'>
+      <IconNotification className='!stroke-white max-lg:size-5 max-md:size-4'/>
+    </Button>
   )
 }

@@ -5,21 +5,21 @@ export const menuItems: NavigationMenuItem[] = [
     {
         title: "صفحه اصلی",
         href: "/",
-        icon: <IconHome/>
+        icon: <IconHome className="max-lg:size-5 max-md:size-4 max-sm:size-7"/>
     },
     {
         title: "مورد علاقه" ,
         href: "/favorite",
-        icon: <IconHeartOutline/>
+        icon: <IconHeartOutline className="max-lg:size-5 max-md:size-4 max-sm:size-8"/>
     },
     {
         title: "مورد انتظار" ,
         href: "/expectation",
-        icon: <IconCalendar/>
+        icon: <IconCalendar className="max-lg:size-5 max-md:size-4 max-sm:size-8"/>
     },
     {
         title: "خرید اشتراک" ,
         href: "/buy-subscription",
-        icon: <IconPurchaseTag/>
+        icon: <IconPurchaseTag className="max-lg:size-5 max-md:size-4 max-sm:size-8"/>
     },
 ]
