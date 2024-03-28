@@ -1,17 +1,9 @@
-import { Button } from "../../_components/button";
+import { Slider } from "@/app/_components/slider";
 
 export default function Home() {
   return (
-    <div className="grid h-screen place-content-center text-center">
-      <Button
-        variant="warning"
-        size="large"
-        isLoading
-        loadingType="blocks"
-        shape="wide"
-      >
-        در دست ساخت
-      </Button>
+    <div className="flex flex-col items-center pt-10">
+      <Slider/>
     </div>
   );
 }

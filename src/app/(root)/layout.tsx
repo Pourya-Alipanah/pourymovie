@@ -88,8 +88,10 @@ export default function RootLayout({
 }>) {
   return (
     <ClientClerkProvider>
-      <html  className={`${figtree.variable} ${vazirMatn.variable} overflow-y-scroll`}>
-        <body className="sm:grid sm:grid-cols-[1fr_3fr_1fr] sm:grid-rows-1 max-sm:flex max-sm:flex-col-reverse relative bg-[url(/images/main-background.jpg)] bg-center bg-cover bg-no-repeat">
+      <html className={`${figtree.variable} ${vazirMatn.variable}`}>
+        <body className="">
+
+          <div className="sm:grid sm:grid-cols-[1fr_3fr_1fr] sm:grid-rows-1 max-sm:flex max-sm:flex-col-reverse relative bg-[url(/images/main-background.jpg)] bg-center bg-cover bg-no-repeat">
           
         <aside className="bg-[#221f1fd4] flex flex-col items-center py-10 max-sm:pb-[80px]" dir="rtl">
             <AccountSection />
@@ -106,7 +108,7 @@ export default function RootLayout({
             <SuggestedFilms />
           </aside>
 
-          <main className="bg-[#221f1fd4] flex flex-col px-4 py-10 " dir="rtl">
+          <main className="bg-[#221f1fd4] flex flex-col px-4 py-10 max-sm:pt-5" dir="rtl">
             <div className="flex items-center justify-around">
               <GlobalSearch />
               <Notification />
@@ -125,6 +127,7 @@ export default function RootLayout({
           <Footer />
 
           <MobileFooter />
+          </div>
         </body>
       </html>
     </ClientClerkProvider>

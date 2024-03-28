@@ -79,7 +79,7 @@ export default function RootLayout({
       <html className={`${figtree.variable} ${vazirMatn.variable}`}>
         <body className="sm:grid w-full h-[100vh] relative bg-[url(/images/main-background.jpg)] bg-center bg-cover bg-no-repeat">
 
-          <main className="bg-[#221f1ff2] w-full h-screen grid place-items-center overflow-y-scroll">
+          <main className="bg-[#221f1ff2] w-full h-screen grid place-items-center">
             {children}
           </main>
 
