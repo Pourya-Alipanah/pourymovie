@@ -17,7 +17,7 @@ export const SuggestedFilmCard: React.FC<Partial<FilmCard>> = ({
       className="flex relative mb-2 rounded-[11px] group overflow-hidden"
       lang="en"
     >
-      <Image src={image} alt="got" width={190} height={235} />
+      <Image src={image} alt="got" width={190} height={235} className="max-sm:w-[150px]"/>
       <div className="absolute rounded-b-[11px] bottom-0 bg-[#000000b3] w-full h-1/3 group-hover:h-full group-hover:rounded-t-[11px] transition-all duration-500 ease-in-out flex flex-col justify-center items-center backdrop-blur-[2px] text-center max-md:pt-4">
 
         <span className="text-white text-lg max-xl:text-base max-lg:text-xs max-md:text-[10px] font-bold">

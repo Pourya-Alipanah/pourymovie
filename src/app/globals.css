@@ -3,7 +3,9 @@
 @import '../tailwind/components.css';
 @import 'tailwindcss/utilities';
 
-
+:root{
+  color-scheme: dark;
+}
 html{
   font-family: var(--font-vazir-matn);
 }
