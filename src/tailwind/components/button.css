@@ -1,0 +1,338 @@
+.btn {
+  * {
+    @apply transition duration-100 ease-in-out;
+  }
+
+  font-size: 1.125rem;
+
+  @apply no-underline inline-flex gap-2 h-12 px-4 border cursor-pointer select-none;
+  @apply items-center justify-center transition duration-100 ease-in-out rounded-lg;
+
+  @apply border-dark/70 bg-dark/70 text-white outline-dark;
+
+  svg {
+    @apply stroke-white;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      @apply bg-primary-focus border-primary-focus text-dark;
+    }
+    &:hover svg {
+      @apply stroke-dark;
+    }
+  }
+
+  /* colors */
+
+  &-primary {
+    @apply bg-primary/70 border-primary/70 outline-primary/70 text-white;
+
+    svg {
+      @apply stroke-white;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        @apply bg-primary-focus border-primary-focus text-white;
+      }
+      &:hover svg {
+        @apply stroke-white;
+      }
+    }
+  }
+
+  &-neutral {
+    @apply bg-neutral border-neutral outline-neutral text-primary;
+
+    svg {
+      @apply stroke-primary;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        @apply bg-neutral-focus border-neutral-focus text-primary;
+      }
+      &:hover svg {
+        @apply stroke-primary;
+      }
+    }
+  }
+
+  &-success {
+    @apply bg-success/[0.87] border-success/[0.87] outline-success/[0.87] text-success-content/[0.87];
+
+    svg {
+      @apply stroke-success-content/[0.87];
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        @apply bg-success-focus/[0.87] border-success-focus/[0.87] text-success-content/[0.87];
+      }
+      &:hover svg {
+        @apply stroke-success-content/[0.87];
+      }
+    }
+  }
+  &-info {
+    @apply bg-info/[0.87] border-info/[0.87] outline-info/[0.87] text-info-content/[0.87];
+
+    svg {
+      @apply stroke-info-content/[0.87];
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        @apply bg-info-focus/[0.87] border-info-focus/[0.87] text-info-content/[0.87];
+      }
+      &:hover svg {
+        @apply stroke-info-content/[0.87];
+      }
+    }
+  }
+  &-warning {
+    @apply bg-warning/[0.87] border-warning/[0.87] outline-warning/[0.87] text-warning-content/[0.87];
+
+    svg {
+      @apply stroke-warning-content/[0.87];
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        @apply bg-warning-focus/[0.87] border-warning-focus/[0.87] text-warning-content/[0.87];
+      }
+      &:hover svg {
+        @apply stroke-warning-content/[0.87];
+      }
+    }
+  }
+
+  &-error {
+    @apply bg-danger/[0.87] border-danger/[0.87] outline-danger/[0.87] text-danger-content/[0.87];
+
+    svg {
+      @apply stroke-danger-content/[0.87];
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        @apply bg-danger-focus/[0.87] border-danger-focus/[0.87] text-danger-content/[0.87];
+      }
+      &:hover svg {
+        @apply stroke-danger-content/[0.87];
+      }
+    }
+  }
+
+  &-ghost {
+    @apply bg-transparent border-transparent outline-current text-white;
+
+    svg {
+      @apply stroke-white;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        @apply border-opacity-0 bg-white bg-opacity-80 text-dark;
+      }
+      &:hover svg {
+        @apply stroke-dark;
+      }
+    }
+  }
+
+  &-link {
+    @apply bg-transparent border-transparent outline-none text-primary;
+
+    svg {
+      @apply stroke-primary;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        @apply bg-transparent border-transparent underline text-primary-focus;
+      }
+      &:hover svg {
+        @apply stroke-primary-focus;
+      }
+    }
+  }
+
+  /* Outlines */
+
+  &-outline {
+    @apply bg-transparent border-current outline-none text-white;
+
+    svg {
+      @apply stroke-white;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        @apply bg-white border-white text-dark;
+      }
+      &:hover svg {
+        @apply stroke-dark;
+      }
+    }
+
+    &.btn-primary {
+      @apply text-white border-primary;
+
+      svg {
+        @apply stroke-primary;
+      }
+
+      @media (hover: hover) {
+        &:hover {
+          @apply border-primary-focus bg-primary-focus text-white;
+        }
+        &:hover svg {
+          @apply stroke-white;
+        }
+      }
+    }
+    &.btn-neutral {
+      @apply text-primary border-dark;
+
+      svg {
+        @apply stroke-primary;
+      }
+
+      @media (hover: hover) {
+        &:hover {
+          @apply border-neutral-focus bg-neutral-focus text-primary;
+        }
+        &:hover svg {
+          @apply stroke-primary;
+        }
+      }
+    }
+    &.btn-success {
+      @apply text-success/[0.87];
+
+      svg {
+        @apply stroke-success/[0.87];
+      }
+
+      @media (hover: hover) {
+        &:hover {
+          @apply border-success-focus/[0.87] bg-success-focus/[0.87] text-success-content/[0.87];
+        }
+        &:hover svg {
+          @apply stroke-success-content/[0.87];
+        }
+      }
+    }
+    &.btn-info {
+      @apply text-info/[0.87];
+
+      svg {
+        @apply stroke-info/[0.87];
+      }
+
+      @media (hover: hover) {
+        &:hover {
+          @apply border-info-focus/[0.87] bg-info-focus/[0.87] text-info-content/[0.87];
+        }
+        &:hover svg {
+          @apply stroke-info-content/[0.87];
+        }
+      }
+    }
+    &.btn-warning {
+      @apply text-warning/[0.87];
+
+      svg {
+        @apply stroke-warning/[0.87];
+      }
+
+      @media (hover: hover) {
+        &:hover {
+          @apply border-warning-focus/[0.87] bg-warning-focus/[0.87] text-warning-content/[0.87];
+        }
+        &:hover svg {
+          @apply stroke-warning-content/[0.87];
+        }
+      }
+    }
+    &.btn-error {
+      @apply text-danger/[0.87];
+
+      svg {
+        @apply stroke-danger/[0.87];
+      }
+
+      @media (hover: hover) {
+        &:hover {
+          @apply border-danger-focus/[0.87] bg-danger-focus/[0.87] text-danger-content/[0.87];
+        }
+        &:hover svg {
+          @apply stroke-danger-content/[0.87];
+        }
+      }
+    }
+  }
+
+  /* disabled */
+
+  &[disabled],
+  &:disabled {
+    @apply cursor-not-allowed border-none text-opacity-40 bg-opacity-60;
+  }
+  @media (hover: hover) {
+    &[disabled]:hover,
+    &:disabled:hover {
+      @apply border-opacity-0 bg-opacity-35 text-opacity-40;
+    }
+  }
+
+  /* sizes and shapes */
+
+  &-xs {
+    @apply w-14 h-6 px-2;
+    font-size: 0.75rem;
+  }
+  &-sm {
+    @apply w-20 h-8 px-3;
+    font-size: 0.875rem;
+  }
+  &-lg {
+    @apply w-32 h-16 px-6;
+    font-size: 1.125rem;
+  }
+
+  &-wide {
+    @apply w-64 flex-nowrap;
+  }
+  &-full {
+    @apply w-full;
+  }
+  &-square {
+    @apply h-12 w-12 p-0;
+
+    &:where(.btn-xs) {
+      @apply h-6 w-6 p-0;
+    }
+    &:where(.btn-sm) {
+      @apply h-8 w-8 p-0;
+    }
+    &:where(.btn-lg) {
+      @apply h-16 w-16 p-0;
+    }
+  }
+  &-circle {
+    @apply h-11 w-11 p-0 rounded-full;
+
+    &:where(.btn-xs) {
+      @apply h-6 w-6 p-0 rounded-full;
+    }
+    &:where(.btn-sm) {
+      @apply h-8 w-8 p-0 rounded-full;
+    }
+    &:where(.btn-lg) {
+      @apply h-16 w-16 p-0 rounded-full;
+    }
+  }
+}
