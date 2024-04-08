@@ -1,5 +1,7 @@
-import BaseIcon from "../base-icon";
+import dynamic from 'next/dynamic';
 import { SvgIcon as SvgIconProps } from "../icon.d";
+
+const BaseIcon = dynamic(() => import('../base-icon'));
 
 export default function SvgIcon(props:SvgIconProps) {
   return (

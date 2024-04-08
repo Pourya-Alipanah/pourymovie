@@ -1,10 +1,11 @@
 import React from "react";
 import type { Metadata } from "next";
 import { Figtree } from "next/font/google";
-import { ClerkProvider } from "@clerk/nextjs";
 import "../globals.css";
-import { clerkCustomTheme } from '@/constants/clerk-custom-theme';
 import localFont from "next/font/local";
+import Image from "next/image";
+import ClientClerkProvider from "@/providers/client-clerk-provider";
+
 
 const figtree = Figtree({
   display: "swap",
@@ -75,16 +76,24 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider appearance={clerkCustomTheme}>
+    <ClientClerkProvider>
       <html className={`${figtree.variable} ${vazirMatn.variable}`}>
-        <body className="sm:grid w-full h-[100vh] relative bg-[url(/images/main-background.jpg)] bg-center bg-cover bg-no-repeat">
+        <body className="sm:grid w-full h-[100vh] relative">
 
-          <main className="bg-[#221f1ff2] w-full h-screen grid place-items-center">
+        <Image
+            src={"/images/main-background.jpg"}
+            alt="background-image"
+            fill
+            priority
+            className="object-cover object-center"
+          />
+
+          <main className="bg-[#221f1ff2] relative z-10 w-full h-screen grid place-items-center">
             {children}
           </main>
 
         </body>
       </html>
-    </ClerkProvider>
+    </ClientClerkProvider>
   );
 }

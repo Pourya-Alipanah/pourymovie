@@ -1,10 +1,12 @@
 import React from "react";
 import type { Metadata } from "next";
-import ClientClerkProvider from "@/providers/client-clerk-provider";
 import { Figtree } from "next/font/google";
 import "../globals.css";
 import { ClerkLoaded, ClerkLoading } from "@clerk/nextjs";
 import { Loading } from "../_components/loading";
+import Image from "next/image";
+import ClientClerkProvider from "@/providers/client-clerk-provider";
+
 
 const figtree = Figtree({
   display: "swap",
@@ -41,8 +43,15 @@ export default function RootLayout({
   return (
     <ClientClerkProvider>
       <html lang="en" className={`${figtree.variable}`}>
-        <body className="sm:grid w-full h-[100vh] relative bg-[url(/images/main-background.jpg)] bg-center bg-cover bg-no-repeat">
-          <main className="bg-[#221f1fd4] w-full h-screen grid place-items-center overflow-y-scroll">
+        <body className="sm:grid w-full h-[100vh] relative">
+        <Image
+            src={"/images/main-background.jpg"}
+            alt="background-image"
+            fill
+            priority
+            className="object-cover object-center"
+          />
+          <main className="bg-[#221f1fd4] relative z-10 w-full h-screen grid place-items-center overflow-y-scroll">
             <ClerkLoading>
               <Loading size="large" type="balls" variant="primary" />
             </ClerkLoading>

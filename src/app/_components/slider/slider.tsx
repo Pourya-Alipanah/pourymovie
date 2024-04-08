@@ -44,20 +44,21 @@ export const Slider = () => {
       autoplay={{ delay: 8000 }}
       modules={[Autoplay]}
       className='rounded-[14px] h-[280px]'
+      effect='fade'
     >
         {dummyData.map(({ id, image, href , alt})=>(
 
-            <SwiperSlide className='!flex !w-full' key={id}>
-                <Link href={href} className='w-full flex'>
+            <SwiperSlide className='!flex !w-full justify-center' key={id}>
+                <Link href={href} className='flex'>
                     <Image src={image} 
                         alt={alt}
                         width={879}
                         height={280}
                         className='rounded-[14px] object-cover object-[40%] max-md:object-[30%]'
+                        priority
                     />
                 </Link>
             </SwiperSlide>
-
         ))}
     </Swiper>
   );

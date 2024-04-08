@@ -27,7 +27,7 @@ export const AccountSection: React.FC = () => {
         <Link href="/sign-in">
           <Button
             variant="primary"
-            className="rounded-2xl text-sm max-md:text-[10px] max-md:block hidden"
+            className="rounded-2xl text-sm max-md:text-[10px] max-md:block hidden p-3"
           >
             ورود یا ثبت نام
           </Button>

@@ -5,18 +5,16 @@ import localFont from "next/font/local";
 import Image from "next/image";
 import Link from "next/link";
 
-import ClientClerkProvider from "@/providers/client-clerk-provider";
-
 import { title, description } from "@/constants/metaTagInfo";
 import { Footer } from "../_components/footer";
 import { GlobalSearch } from "../_components/global-search";
 import { Notification } from "../_components/notification";
 import { AccountSection } from "../_components/account-section";
-import { IconArrowDownOutlined } from "../_components/icons";
 import { SuggestedFilms } from "../_components/suggested-films";
 import { MobileFooter } from "../_components/mobile-footer";
 
 import "../globals.css";
+import ClientClerkProvider from "@/providers/client-clerk-provider";
 
 const figtree = Figtree({
   display: "swap",
@@ -78,7 +76,7 @@ export const metadata: Metadata = {
     description,
     images: "../../../images/pourymovie-meta.jpeg",
   },
-  icons: "../favicon.ico"
+  icons: "../favicon.ico",
 };
 
 export default function RootLayout({
@@ -88,45 +86,49 @@ export default function RootLayout({
 }>) {
   return (
     <ClientClerkProvider>
-      <html className={`${figtree.variable} ${vazirMatn.variable}`}>
-        <body className="">
+      <html lang="fa" className={`${figtree.variable} ${vazirMatn.variable}`}>
+        <body className="relative">
+          <Image
+            src={"/images/main-background.jpg"}
+            alt="background-image"
+            fill
+            priority
+            className="object-cover object-center"
+          />
 
-          <div className="sm:grid sm:grid-cols-[1fr_3fr_1fr] sm:grid-rows-1 max-sm:flex max-sm:flex-col-reverse relative bg-[url(/images/main-background.jpg)] bg-center bg-cover bg-no-repeat">
-          
-        <aside className="bg-[#221f1fd4] flex flex-col items-center py-10 max-sm:pb-[80px]" dir="rtl">
-            <AccountSection />
+          <div className="sm:grid sm:grid-cols-[0.7fr_3fr_0.9fr] sm:grid-rows-1 max-sm:flex max-sm:flex-col-reverse relative">
+            <aside
+              className="bg-[#221f1fd4] flex flex-col items-center py-10 max-sm:pb-[80px]"
+              dir="rtl"
+            >
+              <AccountSection />
 
-            <div className="flex items-center justify-between mt-10 mb-6 text-white font-light">
-              <span className="max-lg:text-sm max-md:text-xs">
-                فیلم های پیشنهادی
-              </span>
-              <span>
-                <IconArrowDownOutlined className="max-lg:size-5 max-md:size-4" />
-              </span>
-            </div>
+              <SuggestedFilms />
 
-            <SuggestedFilms />
-          </aside>
+            </aside>
 
-          <main className="bg-[#221f1fd4] flex flex-col px-4 py-10 max-sm:pt-5" dir="rtl">
-            <div className="flex items-center justify-around">
-              <GlobalSearch />
-              <Notification />
-              <Link href="/" className="sm:hidden">
-                <Image
-                  src="/images/pourymovie-logo.png"
-                  alt="logo"
-                  width={50}
-                  height={50}
-                />
-              </Link>
-            </div>
-            {children}
-          </main>
+            <main
+              className="bg-[#221f1fd4] flex flex-col pr-4 py-10 max-sm:pl-4 max-sm:pt-5"
+              dir="rtl"
+            >
+              <div className="flex items-center justify-around">
+                <GlobalSearch />
+                <Notification />
+                <Link href="/" className="sm:hidden">
+                  <Image
+                    src="/images/pourymovie-logo.png"
+                    alt="logo"
+                    width={50}
+                    height={50}
+                  />
+                </Link>
+              </div>
+              {children}
+            </main>
 
-          <Footer />
+            <Footer />
 
-          <MobileFooter />
+            <MobileFooter />
           </div>
         </body>
       </html>

@@ -14,6 +14,7 @@ const NotFound = () => {
           height={608}
           alt="not found"
           className="pointer-events-none"
+          priority
         />
         <Button variant="primary" isLink className='absolute bottom-14 max-sm:bottom-11 left-1/2 -translate-x-1/2 z-10 max-sm:text-xs'>
           <Link href="/">بریم صفحه اصلی</Link>
