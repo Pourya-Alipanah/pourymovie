@@ -14,7 +14,7 @@ export const Footer: React.FC = () => {
       className="bg-gradient-to-b from-[#131313] via-[#131313eb] to-[#221f1fd4] max-sm:hidden"
       dir="rtl"
     >
-      <div className="container h-screen flex flex-col items-center gap-14 text-white sticky top-0 overflow-hidden">
+      <div className="container flex flex-col items-center 2xl:gap-14 xl:gap-12 lg:gap-10 md:gap-8 sm:gap-6 text-white sticky top-0">
         <Link href="/" className="flex items-center justify-center mt-5">
           <Image
             src="/images/pourymovie-logo.png"

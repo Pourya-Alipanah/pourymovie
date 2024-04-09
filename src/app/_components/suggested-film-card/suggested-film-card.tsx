@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { FilmCard } from "./film-card.types";
+import { SuggestedFilmCardProps } from "./suggested-film-card.types";
 
-// todo: remove Partial and dummy data
-export const SuggestedFilmCard: React.FC<Partial<FilmCard>> = ({
+// TODO: remove Partial and dummy data
+export const SuggestedFilmCard: React.FC<Partial<SuggestedFilmCardProps>> = ({
   image = "/images/got.png",
   rating = 9.3,
   title = "Game of Thrones",

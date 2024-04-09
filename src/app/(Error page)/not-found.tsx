@@ -5,7 +5,7 @@ import { Button } from '@/app/_components/button';
 
 const NotFound = () => {
   return (
-    <div className="w-full h-[80vh] flex flex-col justify-center items-center gap-1">
+    <div className="w-full flex flex-col justify-center items-center gap-1">
       <h1 className="text-white text-2xl max-sm:text-lg mt-2 relative top-14 max-sm:top-8">صفحه مورد نظر یافت نشد</h1>
       <div className="relative">
         <Image
