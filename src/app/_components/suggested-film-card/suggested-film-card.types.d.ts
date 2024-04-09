@@ -1,4 +1,4 @@
-export type FilmCard ={
+export type SuggestedFilmCardProps ={
     title:string,
     rating:number,
     year:number,

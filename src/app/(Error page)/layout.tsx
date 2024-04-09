@@ -78,7 +78,7 @@ export default function RootLayout({
   return (
     <ClientClerkProvider>
       <html className={`${figtree.variable} ${vazirMatn.variable}`}>
-        <body className="sm:grid w-full h-[100vh] relative">
+        <body className="relative">
 
         <Image
             src={"/images/main-background.jpg"}
@@ -88,9 +88,9 @@ export default function RootLayout({
             className="object-cover object-center"
           />
 
-          <main className="bg-[#221f1ff2] relative z-10 w-full h-screen grid place-items-center">
+          <div className="bg-[#221f1ff2] relative z-10 w-full min-h-screen grid place-items-center">
             {children}
-          </main>
+          </div>
 
         </body>
       </html>
