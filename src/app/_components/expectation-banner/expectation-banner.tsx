@@ -85,14 +85,14 @@ export const ExpectationBanner = () => {
             </Button>
           </Link>
 
-          <div className="flex gap-2 absolute left-3 top-0 text-xs max-w-[50%]">
+          <div className="flex max-md:flex-col max-sm:flex-row max-md:gap-[2px] gap-2 absolute max-sm:left-3 md:left-3 max-md:left-0 top-0 text-xs max-md:text-[10px] max-w-[50%][&>div]:h-9 max-sm:[&>div]:h-8 max-md:[&>div]:h-6">
             <div
               lang="en"
-              className="flex justify-center items-center text-center bg-dark h-9 py-4 px-2 rounded-b-lg"
+              className="flex justify-center items-center text-center bg-dark py-4 px-2 max-sm:rounded-b-lg md:rounded-b-lg max-md:rounded-r-lg max-md:rounded-se-lg max-md:rounded-ss-none max-sm:rounded-se-none max-sm:rounded-t-none"
             >
               <p>{title}</p>
             </div>
-            <div className="flex justify-center items-center text-center bg-dark h-9 py-4 px-2 rounded-b-lg">
+            <div className="flex justify-center items-center text-center font-light bg-dark py-4 px-2 max-sm:rounded-b-lg md:rounded-b-lg max-md:rounded-r-lg max-sm:rounded-t-none">
               <p>{titleDescription}</p>
             </div>
           </div>
