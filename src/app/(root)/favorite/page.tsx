@@ -1,6 +1,27 @@
 import { FilmCard } from "@/app/_components/film-card";
 import Image from "next/image";
 import React from "react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  metadataBase: new URL("https://pourymovie.tech/favorite"),
+  title: "Favorite | Poury Movie",
+  description: "صفحه مورد علاقه ها | پوری مووی",
+  openGraph: {
+    type: "website",
+    url: "https://pourymovie.tech/favorite",
+    title: "Favorite | Poury Movie",
+    description: "صفحه مورد علاقه ها | پوری مووی",
+    images: "../../../../images/pourymovie-meta.jpeg",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Favorite | Poury Movie",
+    description: "صفحه مورد علاقه ها | پوری مووی",
+    images: "../../../../images/pourymovie-meta.jpeg",
+  },
+  icons: "../../../favicon.ico",
+};
 
 const Favorite = () => {
   // TODO: fetch data from backend and pass it to FilmCard component

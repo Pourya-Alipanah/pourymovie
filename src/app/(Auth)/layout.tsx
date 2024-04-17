@@ -1,5 +1,4 @@
 import React from "react";
-import type { Metadata } from "next";
 import { Figtree } from "next/font/google";
 import "../globals.css";
 import { ClerkLoaded, ClerkLoading } from "@clerk/nextjs";
@@ -14,26 +13,6 @@ const figtree = Figtree({
   weight: ["300", "400", "500", "600", "700", "800", "900"],
   variable: "--font-figtree",
 });
-
-export const metadata: Metadata = {
-  metadataBase: new URL("https://pourymovie.tech/sign-in"),
-  title: "Auth | Poury Movie",
-  description: "صفحه ورود و ثبت نام | پوری مووی",
-  openGraph: {
-    type: "website",
-    url: "https://pourymovie.tech/sign-in",
-    title: "Auth | Poury Movie",
-    description: "صفحه ورود و ثبت نام | پوری مووی",
-    images: "../../images/pourymovie-meta.jpeg",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Auth | Poury Movie",
-    description: "صفحه ورود و ثبت نام | پوری مووی",
-    images: "../../images/pourymovie-meta.jpeg",
-  },
-  icons: "../favicon.ico",
-};
 
 export default function RootLayout({
   children,
