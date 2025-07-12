@@ -3,7 +3,7 @@ import { IconGithub, IconLinkedin } from "../icons";
 
 export const DetailedInfo: React.FC = () => {
   return (
-    <div className="flex flex-col w-full">
+    <div className="flex flex-col w-full mt-auto">
 
       <div className="flex flex-col items-start pr-10">
 

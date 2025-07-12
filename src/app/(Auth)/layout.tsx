@@ -1,12 +1,11 @@
-import React from "react";
-import type { Metadata } from "next";
+import authPic from "@public/images/authPic.jpeg";
 import { Figtree } from "next/font/google";
-import "../globals.css";
-import { ClerkLoaded, ClerkLoading } from "@clerk/nextjs";
-import { Loading } from "../_components/loading";
 import Image from "next/image";
-import ClientClerkProvider from "@/providers/client-clerk-provider";
+import React from "react";
 
+import "../globals.css";
+
+import { Providers } from "@/providers";
 
 const figtree = Figtree({
   display: "swap",
@@ -15,36 +14,16 @@ const figtree = Figtree({
   variable: "--font-figtree",
 });
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://pourymovie.tech/sign-in"),
-  title: "Auth | Poury Movie",
-  description: "صفحه ورود و ثبت نام | پوری مووی",
-  openGraph: {
-    type: "website",
-    url: "https://pourymovie.tech/sign-in",
-    title: "Auth | Poury Movie",
-    description: "صفحه ورود و ثبت نام | پوری مووی",
-    images: "../../images/pourymovie-meta.jpeg",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Auth | Poury Movie",
-    description: "صفحه ورود و ثبت نام | پوری مووی",
-    images: "../../images/pourymovie-meta.jpeg",
-  },
-  icons: "../favicon.ico",
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <ClientClerkProvider>
+    <Providers>
       <html lang="en" className={`${figtree.variable}`}>
         <body className="sm:grid w-full h-[100vh] relative">
-        <Image
+          <Image
             src={"/images/main-background.jpg"}
             alt="background-image"
             fill
@@ -52,13 +31,22 @@ export default function RootLayout({
             className="object-cover object-center"
           />
           <main className="bg-[#221f1fd4] relative z-10 w-full h-screen grid place-items-center overflow-y-scroll">
-            <ClerkLoading>
-              <Loading size="large" type="balls" variant="primary" />
-            </ClerkLoading>
-            <ClerkLoaded>{children}</ClerkLoaded>
+            <section className="flex min-w-[800px] max-w-[800px] py-10 min-h-[400px] rounded-lg bg-dark/80">
+              <div className="flex justify-center items-center w-[350px] relative">
+                <Image
+                  src={authPic}
+                  width={320}
+                  style={{
+                    borderRadius: "12px",
+                  }}
+                  alt="auth pic"
+                />
+              </div>
+              {children}
+            </section>
           </main>
         </body>
       </html>
-    </ClientClerkProvider>
+    </Providers>
   );
 }
