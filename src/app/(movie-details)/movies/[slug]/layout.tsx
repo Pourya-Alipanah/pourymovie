@@ -13,9 +13,9 @@ import { AccountSection } from "../../../_components/account-section";
 import { MobileFooter } from "../../../_components/mobile-footer";
 
 import "../../../globals.css";
-import ClientClerkProvider from "@/providers/client-clerk-provider";
 import { ActorsCardList } from "@/app/_components/actors-card-list";
 import { ActorsCardsProps } from "@/app/_components/actors-card/actors-card.types";
+import { Providers } from "@/providers";
 
 const figtree = Figtree({
   display: "swap",
@@ -139,7 +139,7 @@ export default function RootLayout({
   params: { slug: string };
 }>) {
   return (
-    <ClientClerkProvider>
+    <Providers>
       <html lang="fa" className={`${figtree.variable} ${vazirMatn.variable}`}>
         <body className="relative">
           <Image
@@ -184,6 +184,6 @@ export default function RootLayout({
           </div>
         </body>
       </html>
-    </ClientClerkProvider>
+    </Providers>
   );
 }

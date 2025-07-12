@@ -4,7 +4,7 @@ import { Figtree } from "next/font/google";
 import "../globals.css";
 import localFont from "next/font/local";
 import Image from "next/image";
-import ClientClerkProvider from "@/providers/client-clerk-provider";
+import { Providers } from "@/providers";
 
 
 const figtree = Figtree({
@@ -76,7 +76,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClientClerkProvider>
+    <Providers>
       <html className={`${figtree.variable} ${vazirMatn.variable}`}>
         <body className="relative">
 
@@ -94,6 +94,6 @@ export default function RootLayout({
 
         </body>
       </html>
-    </ClientClerkProvider>
+    </Providers>
   );
 }

@@ -1,5 +1,4 @@
 import React from 'react'
-import { SignIn } from "@clerk/nextjs";
 import { Metadata } from 'next'
  
 export const metadata: Metadata = {
@@ -24,7 +23,7 @@ export const metadata: Metadata = {
 
 const page = () => {
   return (
-    <SignIn />
+    <div>sign in</div>
   )
 }
 

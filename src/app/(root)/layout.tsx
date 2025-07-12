@@ -14,7 +14,7 @@ import { SuggestedFilms } from "../_components/suggested-films";
 import { MobileFooter } from "../_components/mobile-footer";
 
 import "../globals.css";
-import ClientClerkProvider from "@/providers/client-clerk-provider";
+import { Providers } from "@/providers";
 
 const figtree = Figtree({
   display: "swap",
@@ -85,7 +85,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClientClerkProvider>
+    <Providers>
       <html lang="fa" className={`${figtree.variable} ${vazirMatn.variable}`}>
         <body className="relative">
           <Image
@@ -96,7 +96,7 @@ export default function RootLayout({
             className="object-cover object-center"
           />
 
-          <div className="sm:grid sm:grid-cols-[0.7fr_3fr_0.9fr] sm:grid-rows-1 max-sm:flex max-sm:flex-col-reverse relative">
+          <div className="sm:grid 2xl:grid-cols-[0.7fr_3fr_0.7fr] sm:grid-cols-[0.7fr_3fr_0.9fr] sm:grid-rows-1 max-sm:flex max-sm:flex-col-reverse relative">
             <aside
               className="bg-[#221f1fd4] flex flex-col items-center py-10 max-sm:pb-[80px]"
               dir="rtl"
@@ -132,6 +132,6 @@ export default function RootLayout({
           </div>
         </body>
       </html>
-    </ClientClerkProvider>
+    </Providers>
   );
 }
