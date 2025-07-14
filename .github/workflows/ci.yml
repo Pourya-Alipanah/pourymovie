@@ -1,0 +1,39 @@
+name: frontend CI
+description: CI workflow for the frontend service
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+      - release/*
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Copy code to /opt/pourymovie/frontend
+        run: |
+          sudo rm -rf /opt/pourymovie/frontend/*
+          sudo cp -r . /opt/pourymovie/frontend
+
+      - name: Docker Compose Down
+        run: |
+          cd /opt/pourymovie/infra
+          docker compose down frontend
+
+  deploy:
+    runs-on: self-hosted
+    needs: build
+    steps:
+      - name: Docker Compose Up
+        run: |
+          cd /opt/pourymovie/infra
+          docker compose up -d --build --force-recreate --force-recreate frontend
